@@ -20,6 +20,9 @@ namespace JamesCarberry_s00197582
     /// </summary>
     public partial class MainWindow : Window
     {
+        //declare list of games
+        List<Game> AllGames;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,6 +30,32 @@ namespace JamesCarberry_s00197582
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //declare db
+            GameData db = new GameData();
+
+            //get data from db
+            var query = from g in db.Games
+                        select g;
+
+            //display names in listbox
+            AllGames = query.ToList();
+            games_lbx.ItemsSource = AllGames;
+
+        }
+
+        private void games_lbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //display game details
+            Game selectedGame = games_lbx.SelectedItem as Game;
+
+            if(selectedGame != null)
+            {
+                games_img.Source = new BitmapImage(new Uri(selectedGame.Game_Image, UriKind.Relative));
+                games_tblk.Text = $"Price: {selectedGame.Price} \n" +
+                                  $"Metacritic Score: {selectedGame.Score}";
+            }
+
+
 
         }
     }

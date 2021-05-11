@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JamesCarberry_s00197582"
         mc:Ignorable="d"
-        Title="MainWindow" Height="484.214" Width="808.5" Loaded="Window_Loaded">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid Margin="0,0,2,-1">
+        <ListBox x:Name="games_lbx" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="358" SelectionChanged="games_lbx_SelectionChanged"/>
+        <Image x:Name="games_img" HorizontalAlignment="Left" Height="260" Margin="461,160,0,0" VerticalAlignment="Top" Width="329"/>
+        <TextBlock x:Name="games_tblk" HorizontalAlignment="Left" Margin="461,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="123" Width="329"/>
 
     </Grid>
 </Window>
