@@ -41,6 +41,10 @@ namespace JamesCarberry_s00197582
             AllGames = query.ToList();
             games_lbx.ItemsSource = AllGames;
 
+            //display game genres
+            string[] platforms = {"All", "PC, Xbox, PS, Switch","PS","Xbox","Switch" };
+            platform_cbx.ItemsSource = platforms;
+
         }
 
         private void games_lbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -57,9 +61,72 @@ namespace JamesCarberry_s00197582
 
         }
 
-        private void platform_lbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void platform_cbx_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
+            string selectedPlatform = platform_cbx.SelectedItem as string;
 
+            List<Game> filteredList = new List<Game>();
+
+            switch (selectedPlatform)
+            {
+                case "All":
+                    games_lbx.ItemsSource = AllGames;
+                    break;
+
+                case "PC, Xbox, PS, Switch":
+
+                    foreach (Game game in AllGames)
+                    {
+                        if (game.Platform is "PC, Xbox, PS, Switch")
+                        {
+                            filteredList.Add(game);
+                        }
+                    }
+                    games_lbx.ItemsSource = filteredList;
+                    break;
+
+                case "PS":
+
+                    foreach (Game game in AllGames)
+                    {
+                        if (game.Platform is "PS")
+                        {
+                            filteredList.Add(game);
+                        }
+                    }
+                    games_lbx.ItemsSource = filteredList;
+                    break;
+
+                case "Xbox":
+
+                    foreach (Game game in AllGames)
+                    {
+                        if (game.Platform is "Xbox")
+                        {
+                            filteredList.Add(game);
+                        }
+                    }
+                    games_lbx.ItemsSource = filteredList;
+                    break;
+
+                case "Switch":
+
+                    foreach (Game game in AllGames)
+                    {
+                        if (game.Platform is "Switch")
+                        {
+                            filteredList.Add(game);
+                        }
+                    }
+                    games_lbx.ItemsSource = filteredList;
+                    break;
+
+
+
+
+
+
+            }
         }
     }
 }

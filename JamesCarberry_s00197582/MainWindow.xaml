@@ -19,10 +19,10 @@
     </Window.Resources>
 
     <Grid Margin="0,0,2,-1">
-        <ListBox ItemTemplate="{StaticResource ResourceKey=listboxTemplate}" x:Name="games_lbx" HorizontalAlignment="Left" Height="265" VerticalAlignment="Top" Width="287" SelectionChanged="games_lbx_SelectionChanged"/>
+        <ListBox ItemTemplate="{StaticResource ResourceKey=listboxTemplate}" x:Name="games_lbx" HorizontalAlignment="Left" Height="441" VerticalAlignment="Top" Width="287" SelectionChanged="games_lbx_SelectionChanged" Margin="0,0,0,-21"/>
         <Image x:Name="games_img" HorizontalAlignment="Left" Height="260" Margin="461,160,0,0" VerticalAlignment="Top" Width="329"/>
         <TextBlock x:Name="games_tblk" HorizontalAlignment="Left" Margin="461,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="123" Width="329"/>
-        <ListBox x:Name="platform_lbx" HorizontalAlignment="Left" Height="155" Margin="0,265,0,0" VerticalAlignment="Top" Width="287" SelectionChanged="platform_lbx_SelectionChanged"/>
+        <ComboBox x:Name="platform_cbx" HorizontalAlignment="Left" Margin="318,36,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="platform_cbx_SelectionChanged_1"/>
 
     </Grid>
 </Window>
