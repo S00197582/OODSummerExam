@@ -55,7 +55,10 @@ namespace JamesCarberry_s00197582
                                   $"Metacritic Score: {selectedGame.Score}";
             }
 
+        }
 
+        private void platform_lbx_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
         }
     }

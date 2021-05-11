@@ -6,10 +6,22 @@
         xmlns:local="clr-namespace:JamesCarberry_s00197582"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+
+    <Window.Resources>
+        <DataTemplate x:Key="listboxTemplate">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{Binding Game_Image}" Height="50"/>
+                <TextBlock Margin="5" Text="{Binding Name}" VerticalAlignment="Center"/>
+                <TextBlock Margin="5" Text="{Binding Score}" VerticalAlignment="Center"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
     <Grid Margin="0,0,2,-1">
-        <ListBox x:Name="games_lbx" HorizontalAlignment="Left" Height="420" VerticalAlignment="Top" Width="358" SelectionChanged="games_lbx_SelectionChanged"/>
+        <ListBox ItemTemplate="{StaticResource ResourceKey=listboxTemplate}" x:Name="games_lbx" HorizontalAlignment="Left" Height="265" VerticalAlignment="Top" Width="287" SelectionChanged="games_lbx_SelectionChanged"/>
         <Image x:Name="games_img" HorizontalAlignment="Left" Height="260" Margin="461,160,0,0" VerticalAlignment="Top" Width="329"/>
         <TextBlock x:Name="games_tblk" HorizontalAlignment="Left" Margin="461,0,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="123" Width="329"/>
+        <ListBox x:Name="platform_lbx" HorizontalAlignment="Left" Height="155" Margin="0,265,0,0" VerticalAlignment="Top" Width="287" SelectionChanged="platform_lbx_SelectionChanged"/>
 
     </Grid>
 </Window>
