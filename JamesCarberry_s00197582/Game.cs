@@ -13,7 +13,15 @@ namespace JamesCarberry_s00197582
         public int Score { get; set; }
         public string Description { get; set; }
         public string Platform { get; set; }
-        public double price { get; set; }
+        public double Price { get; set; }
         public string Game_Image { get; set; }
+
+
+        public void DecreasePrice(double priceDrop)
+        {
+            Price = Price - priceDrop;
+        }
+
+
     }
 }
