@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,18 +18,24 @@ namespace JamesCarberry_s00197582
         public string Game_Image { get; set; }
 
         public Game()
-            {
+        {
 
-            }
+        }
 
         public Game(double price)
         {
             Price = price;
         }
 
-
-
-
+        public Game(string name, int score, string description, string platform, double price, string game_image)
+        {
+            Name = name;
+            Score = score;
+            Description = description;
+            Platform = platform;
+            Price = price;
+            Game_Image = game_image;
+        }
 
 
         public void DecreasePrice(double priceDrop)
@@ -38,4 +45,16 @@ namespace JamesCarberry_s00197582
 
 
     }
+
+    public class GameData : DbContext
+    {
+        public GameData() : base("GameData") { } //db name
+
+        public DbSet<Game> Games { get; set; } //create game table
+    }
+
+
+
+
+
 }
