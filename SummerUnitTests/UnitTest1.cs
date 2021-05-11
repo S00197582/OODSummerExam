@@ -11,15 +11,18 @@ namespace SummerUnitTests
         [TestMethod]
         public void TestDecreasePrice()
         {
+            //arrange
             Game game1 = new Game(60);
             Game game2 = new Game(50);
 
             double Price1 = 50;
             double Price2 = 30;
 
+            //act
             game1.DecreasePrice(10);
             game2.DecreasePrice(20);
 
+            //assert
             Assert.AreEqual(Price1, game1.Price);
             Assert.AreEqual(Price2, game2.Price);
 

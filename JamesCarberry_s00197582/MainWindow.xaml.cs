@@ -63,6 +63,7 @@ namespace JamesCarberry_s00197582
 
         private void platform_cbx_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
+            //filter games by genre
             string selectedPlatform = platform_cbx.SelectedItem as string;
 
             List<Game> filteredList = new List<Game>();
@@ -120,11 +121,6 @@ namespace JamesCarberry_s00197582
                     }
                     games_lbx.ItemsSource = filteredList;
                     break;
-
-
-
-
-
 
             }
         }
