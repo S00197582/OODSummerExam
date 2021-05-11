@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JamesCarberry_s00197582
 {
-    class Game
+    public class Game
     {
         public int GameID { get; set; }
         public string Name { get; set; }
@@ -15,6 +15,20 @@ namespace JamesCarberry_s00197582
         public string Platform { get; set; }
         public double Price { get; set; }
         public string Game_Image { get; set; }
+
+        public Game()
+            {
+
+            }
+
+        public Game(double price)
+        {
+            Price = price;
+        }
+
+
+
+
 
 
         public void DecreasePrice(double priceDrop)
